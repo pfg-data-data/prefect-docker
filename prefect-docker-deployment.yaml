@@ -1,9 +1,9 @@
 ###
-### A complete description of a Prefect Deployment for flow 'Create a Report for Google Trends'
+### A complete description of a Prefect Deployment for flow 'Do stupid thing'
 ###
 name: google-trends-gh-docker
 description: null
-version: c77c003fb81669eab35a129f16e2bb90
+version: 5ae1aff747d4488b91e040e264851244
 # The work queue that will handle this deployment's runs
 work_queue_name: test
 tags: []
@@ -14,20 +14,17 @@ infra_overrides: {}
 ###
 ### DO NOT EDIT BELOW THIS LINE
 ###
-flow_name: Create a Report for Google Trends
+flow_name: Do stupid thing
 manifest_path: null
 infrastructure:
   type: docker-container
   env:
-    EXTRA_PIP_PACKAGES: datapane==0.15.1 plotly==5.10.0 prefect>=2.3.1 prefect_shell==0.1.1
+    EXTRA_PIP_PACKAGES: datapane==0.15.1 plotly==5.10.0 prefect>=2.3.2 prefect_shell==0.1.1
       pytrends==4.8.0
   labels: {}
   name: null
-  command:
-  - python
-  - -m
-  - prefect.engine
-  image: prefecthq/prefect:2.3.2-python3.9
+  command: null
+  image: prefecthq/prefect:2.7.7-python3.10
   image_pull_policy: null
   image_registry: null
   networks: []
@@ -35,34 +32,25 @@ infrastructure:
   auto_remove: false
   volumes: []
   stream_output: true
-  _block_document_id: 77f47e0e-63c1-4fc4-a785-7750c22eb499
-  _block_document_name: google-trends
+  _block_document_id: 88c77c4e-e8ce-4267-ab3e-ad854d95bdfe
+  _block_document_name: prefect-docker
   _is_anonymous: false
+  block_type_slug: docker-container
   _block_type_slug: docker-container
 storage:
-  repository: https://github.com/khuyentran1401/prefect-docker
-  reference: master
-  _block_document_id: 1806cf00-a5a6-4834-9d06-159d2b8ee72f
-  _block_document_name: pytrends
+  repository: https://github.com/pfg-data-data/prefect-docker
+  reference: null
+  access_token: null
+  _block_document_id: 1800c1a7-4042-4164-8327-b09d3aa0ec05
+  _block_document_name: github-test
   _is_anonymous: false
+  block_type_slug: github
   _block_type_slug: github
 path: ''
-entrypoint: src/main.py:create_pytrends_report
+entrypoint: src\main.py:print_something
 parameter_openapi_schema:
   title: Parameters
   type: object
-  properties:
-    keyword:
-      title: keyword
-      default: COVID
-      type: string
-    start_date:
-      title: start_date
-      default: '2020-01-01'
-      type: string
-    num_countries:
-      title: num_countries
-      default: 10
-      type: integer
+  properties: {}
   required: null
   definitions: null
