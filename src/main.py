@@ -7,4 +7,4 @@ def step1():
 @flow(name="Do stupid thing")
 def print_something():
     step1()
-    print('he he ho ho')
+    print('sua lai lan 2 test edit')
