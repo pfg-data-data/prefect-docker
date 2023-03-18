@@ -23,6 +23,13 @@ import datetime
 import time
 
 
+
+
+
+------------
+from prefect.blocks.system import JSON
+
+json_block = JSON.load("pfg-sheet-credentials")
 # In[2]:
 
 
@@ -32,7 +39,7 @@ sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
 scope = ['https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive"]
 
-credentials = ServiceAccountCredentials.from_json_keyfile_name("pfg_sheet_credentials.json", scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_block, scope)
 gc = gspread.authorize(credentials)
 
 # Create sheet function
