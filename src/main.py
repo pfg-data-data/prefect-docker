@@ -29,7 +29,7 @@ import time
 ------------
 from prefect.blocks.system import JSON
 
-json_block = JSON.load("pfg-sheet-credentials")
+json_block = json.load("pfg-sheet-credentials")
 # In[2]:
 
 
