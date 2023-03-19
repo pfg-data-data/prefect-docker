@@ -3,6 +3,9 @@ from prefect.blocks.system import JSON
 
 json_block = JSON.load('pfg-sheet-credentials')
 
+import json
+d = json.loads(json_block)
+
 @task(name ="step 1")
 def step1():
     print('dfd')
@@ -10,4 +13,4 @@ def step1():
 @flow(name="Do stupid thing")
 def print_something():
     step1()
-    print(json_block)
+    print(type(d))
