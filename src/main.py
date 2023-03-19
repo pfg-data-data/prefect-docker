@@ -25,9 +25,9 @@ import time
 
 
 ------------
-from prefect.blocks.system import JSON
+# from prefect.blocks.system import JSON
 
-json_block = JSON.load("pfg-sheet-credentials")
+# json_block = JSON.load("pfg-sheet-credentials")
 # In[2]:
 
 @task(name ="step 1")
@@ -37,6 +37,6 @@ def step1():
 @flow(name="Do stupid thing")
 def print_something():
     step1()
-    print(json_block)
+    print('fdf')
 
 
