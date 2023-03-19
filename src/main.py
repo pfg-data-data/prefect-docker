@@ -4,7 +4,7 @@ from prefect.blocks.system import JSON
 json_block = JSON.load('pfg-sheet-credentials')
 
 import json
-d = json.loads(json_block)
+d = json.loads(str(json_block))
 
 @task(name ="step 1")
 def step1():
