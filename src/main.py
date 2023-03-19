@@ -3,6 +3,10 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import json
 
+# Dataframe
+import pandas as pd
+import numpy as np
+
 # -----------------------------
 from prefect import flow, task
 from prefect.blocks.system import JSON
