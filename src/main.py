@@ -10,13 +10,13 @@ json_block = JSON.load('pfg-sheet-credentials')
 
 
 # Connect to Google Sheets
-sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
+# sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
 
-scope = ['https://www.googleapis.com/auth/spreadsheets',
-         "https://www.googleapis.com/auth/drive"]
+# scope = ['https://www.googleapis.com/auth/spreadsheets',
+#          "https://www.googleapis.com/auth/drive"]
 
-credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_block, scope)
-gc = gspread.authorize(credentials)
+# credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_block, scope)
+# gc = gspread.authorize(credentials)
 
 
 
