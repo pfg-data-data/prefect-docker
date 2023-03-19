@@ -38,4 +38,4 @@ def step1():
 @flow(name="Do stupid thing")
 def print_something():
     step1()
-    print(type(d))
+    print(type(json_block))
