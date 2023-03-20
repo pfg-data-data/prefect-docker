@@ -43,6 +43,9 @@ def step1():
 def print_something():
     step1()
     a = json_block.json()
+    print(json_block)
+    print(type(json_block))
+    print('___________________')
     print(a)
     print('___________________')
     print(type(a))
