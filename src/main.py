@@ -41,3 +41,6 @@ def print_something():
     print(type(json_block))
     print('____________________')
     print(json_block)
+    print('____________________')
+    print(json_block['value'])
+
