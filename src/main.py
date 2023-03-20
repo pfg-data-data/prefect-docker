@@ -44,7 +44,7 @@ def print_something():
     step1()
     a = json_block.json()
     print(a)
-    print('
+    print('___________________')
     print(type(a))
     sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
 
