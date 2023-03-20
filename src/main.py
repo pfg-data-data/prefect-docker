@@ -23,6 +23,9 @@ secret_block = Secret.load("sheet-api")
 
 # Access the stored secret
 
+with open(json_block) as user_file:
+    parsed_json = json.load(user_file)
+
 
 
 # # Connect to Google Sheets
@@ -54,8 +57,8 @@ def step1():
 def print_something():
     step1()
     a = json_block.json()
+    print(parsed_json)
     print('secret')
-    print(type(secret_block.get()))
     print(secret_block.get())
     print('___________________')
     print(json_block['value'])
