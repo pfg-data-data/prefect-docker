@@ -41,6 +41,10 @@ def step1():
 @flow(name="Do stupid thing")
 def print_something():
     step1()
+    with open('pfg_sheet_credentials.json') as user_file:
+        parsed_json = json.load(user_file)
+
+    print(parsed_json)
     sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
 
     scope = ['https://www.googleapis.com/auth/spreadsheets',
