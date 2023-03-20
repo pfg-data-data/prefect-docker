@@ -24,25 +24,26 @@ gc = gspread.authorize(credentials)
 
 # Create sheet function
 def pd_extract_sheet_data(destination_database_url, destination_sheet):
-    # open sheet and extract all data
-    wks = gc.open_by_key(destination_database_url).worksheet(destination_sheet)
-    data = wks.get_all_records()
-    return data
+     # open sheet and extract all data
+     wks = gc.open_by_key(destination_database_url).worksheet(destination_sheet)
+     data = wks.get_all_records()
+     return data
 
 
 
 @task(name ="step 1")
 def step1():
-    print('dfd')
+     print('dfd')
     
 @task(name ="step 2")
 def step2():
-    pd_extract_sheet_data(sheet_list_url, 'test')
+     b = pd_extract_sheet_data(sheet_list_url, 'test')
+     print(b)
+
 
     
 @flow(name="Do stupid thing")
 def print_something():
-    step1()
-    df_sheet_list = pd.DataFrame(step2())
-    print(df_sheet_list)
+     step1()
+     step2()
 
