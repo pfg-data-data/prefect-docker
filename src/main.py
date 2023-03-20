@@ -42,10 +42,14 @@ def step1():
 @flow(name="Do stupid thing")
 def print_something():
     step1()
-    #sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
+    a = json_block.json()
+    print(a)
+    print('
+    print(type(a))
+    sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
 
-    #scope = ['https://www.googleapis.com/auth/spreadsheets',
-    #     "https://www.googleapis.com/auth/drive"]
+    scope = ['https://www.googleapis.com/auth/spreadsheets',
+         "https://www.googleapis.com/auth/drive"]
 
-    credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_block.json(), scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_dict(a, scope)
     gc = gspread.authorize(credentials)
