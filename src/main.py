@@ -15,6 +15,16 @@ from prefect.blocks.system import JSON
 json_block = JSON.load('pfg-sheet-credentials')
 
 
+# -----------
+
+from prefect.blocks.system import Secret
+
+secret_block = Secret.load("sheet-api")
+
+# Access the stored secret
+
+
+
 # # Connect to Google Sheets
 # sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
 
@@ -44,7 +54,9 @@ def step1():
 def print_something():
     step1()
     a = json_block.json()
-    print(ast.literal_eval(a))
+    print('secret')
+    print(secret_block.get())
+    print('___________________')
     print(json_block['value'])
     print(type(json_block))
     print('___________________')
