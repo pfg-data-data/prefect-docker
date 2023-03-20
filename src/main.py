@@ -10,19 +10,6 @@ import numpy as np
 
 # -----------------------------
 from prefect import flow, task
-from prefect.blocks.system import JSON
-
-json_block = JSON.load('pfg-sheet-credentials')
-
-
-# -----------
-
-from prefect.blocks.system import Secret
-
-secret_block = Secret.load("sheet-api")
-
-# Access the stored secret
-parsed_json = json.load(json_block)
 
 
 
@@ -54,21 +41,10 @@ def step1():
 @flow(name="Do stupid thing")
 def print_something():
     step1()
-    a = json_block.json()
-    print(parsed_json)
-    print('secret')
-    print(secret_block.get())
-    print('___________________')
-    print(json_block['value'])
-    print(type(json_block))
-    print('___________________')
-    print(a)
-    print('___________________')
-    print(type(a))
     sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
 
     scope = ['https://www.googleapis.com/auth/spreadsheets',
          "https://www.googleapis.com/auth/drive"]
 
-    credentials = ServiceAccountCredentials.from_json_keyfile_dict(a, scope)
+    credentials = ServiceAccountCredentials.from_json_keyfile_name("pfg_sheet_credentials.json", scope)
     gc = gspread.authorize(credentials)
