@@ -36,13 +36,13 @@ def step1():
     print('dfd')
     
 @task(name ="step 2")
-def step1():
+def step2():
     pd_extract_sheet_data(sheet_list_url, 'test')
 
     
 @flow(name="Do stupid thing")
 def print_something():
     step1()
-    b = pd_extract_sheet_data()
+    b = step2()
     print(b)
 
