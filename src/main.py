@@ -2,6 +2,7 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import json
+import ast
 
 # Dataframe
 import pandas as pd
@@ -43,6 +44,7 @@ def step1():
 def print_something():
     step1()
     a = json_block.json()
+    print(ast.literal_eval(a))
     print(json_block['value'])
     print(type(json_block))
     print('___________________')
