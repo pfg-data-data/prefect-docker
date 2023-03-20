@@ -55,6 +55,7 @@ def print_something():
     step1()
     a = json_block.json()
     print('secret')
+    print(type(secret_block.get()))
     print(secret_block.get())
     print('___________________')
     print(json_block['value'])
