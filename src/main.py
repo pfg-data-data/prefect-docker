@@ -43,6 +43,6 @@ def step2():
 @flow(name="Do stupid thing")
 def print_something():
     step1()
-    b = step2()
-    print(b)
+    df_sheet_list = pd.DataFrame(step2())
+    print(df_sheet_list)
 
