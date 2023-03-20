@@ -42,5 +42,5 @@ def print_something():
     print('____________________')
     print(json_block)
     print('____________________')
-    print(json_block['value'])
+    print(json_block.json())
 
