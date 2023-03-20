@@ -35,9 +35,9 @@ def pd_extract_sheet_data(destination_database_url, destination_sheet):
 def step1():
     print('dfd')
 
-@task(name ="step 2")
-def step2():
-    pd_extract_sheet_data(sheet_list_url, 'test')
+# @task(name ="step 2")
+# def step2():
+#     pd_extract_sheet_data(sheet_list_url, 'test')
     
 @flow(name="Do stupid thing")
 def print_something():
@@ -47,5 +47,5 @@ def print_something():
     print(json_block)
     print('____________________')
     print( type(json_block.json()) )
-    a = step2()
-    print(a)
+#     a = step2()
+#     print(a)
