@@ -22,9 +22,7 @@ from prefect.blocks.system import Secret
 secret_block = Secret.load("sheet-api")
 
 # Access the stored secret
-
-with open(json_block) as user_file:
-    parsed_json = json.load(user_file)
+parsed_json = json.load(json_block)
 
 
 
