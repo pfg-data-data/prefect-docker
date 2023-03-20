@@ -45,7 +45,7 @@ def print_something():
     #sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
 
     #scope = ['https://www.googleapis.com/auth/spreadsheets',
-         "https://www.googleapis.com/auth/drive"]
+    #     "https://www.googleapis.com/auth/drive"]
 
     credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_block.json(), scope)
     gc = gspread.authorize(credentials)
