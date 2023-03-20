@@ -15,13 +15,7 @@ json_block = JSON.load('pfg-sheet-credentials')
 
 
 # Connect to Google Sheets
-# sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
 
-# scope = ['https://www.googleapis.com/auth/spreadsheets',
-#          "https://www.googleapis.com/auth/drive"]
-
-# credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_block, scope)
-# gc = gspread.authorize(credentials)
 
 
 
@@ -43,4 +37,12 @@ def print_something():
     print(json_block)
     print('____________________')
     print( type(json_block.json()) )
+    
+    sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
+
+    scope = ['https://www.googleapis.com/auth/spreadsheets',
+         "https://www.googleapis.com/auth/drive"]
+
+    credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_block.json(), scope)
+    gc = gspread.authorize(credentials)
 
