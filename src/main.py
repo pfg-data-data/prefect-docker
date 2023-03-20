@@ -14,21 +14,21 @@ from prefect.blocks.system import JSON
 json_block = JSON.load('pfg-sheet-credentials')
 
 
-# Connect to Google Sheets
-sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
+# # Connect to Google Sheets
+# sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
 
-scope = ['https://www.googleapis.com/auth/spreadsheets',
-         "https://www.googleapis.com/auth/drive"]
+# scope = ['https://www.googleapis.com/auth/spreadsheets',
+#          "https://www.googleapis.com/auth/drive"]
 
-credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_block.json(), scope)
-gc = gspread.authorize(credentials)
+# credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_block.json(), scope)
+# gc = gspread.authorize(credentials)
 
-# Create sheet function
-def pd_extract_sheet_data(destination_database_url, destination_sheet):
-    # open sheet and extract all data
-    wks = gc.open_by_key(destination_database_url).worksheet(destination_sheet)
-    data = wks.get_all_records()
-    return data
+# # Create sheet function
+# def pd_extract_sheet_data(destination_database_url, destination_sheet):
+#     # open sheet and extract all data
+#     wks = gc.open_by_key(destination_database_url).worksheet(destination_sheet)
+#     data = wks.get_all_records()
+#     return data
 
 
 @task(name ="step 1")
@@ -42,10 +42,10 @@ def step1():
 @flow(name="Do stupid thing")
 def print_something():
     step1()
-    print(type(json_block))
-    print('____________________')
-    print(json_block)
-    print('____________________')
-    print( type(json_block.json()) )
-#     a = step2()
-#     print(a)
+    sheet_list_url          = '1c-fmeZbQGs2jESqCH9lZlm80cH2CR9VEHvWNwFbsjeo'
+
+    scope = ['https://www.googleapis.com/auth/spreadsheets',
+         "https://www.googleapis.com/auth/drive"]
+
+    credentials = ServiceAccountCredentials.from_json_keyfile_dict(json_block.json(), scope)
+    gc = gspread.authorize(credentials)
